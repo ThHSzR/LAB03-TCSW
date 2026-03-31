@@ -1,0 +1,38 @@
+:root {
+  --sidebar-width: 220px;
+  --accent: #0d6efd;
+}
+body { background: #f0f2f5; font-size: 0.92rem; }
+.sidebar {
+  width: var(--sidebar-width);
+  min-height: calc(100vh - 56px);
+  background: #1a1d23;
+  padding: 1rem 0.5rem;
+  position: sticky;
+  top: 56px;
+}
+.sidebar .nav-link {
+  color: #adb5bd;
+  border-radius: 0.4rem;
+  padding: 0.45rem 0.75rem;
+  margin-bottom: 2px;
+  transition: all 0.2s;
+  font-size: 0.875rem;
+}
+.sidebar .nav-link:hover { color: #fff; background: rgba(255,255,255,0.08); }
+.sidebar .nav-link.active { color: #fff; background: var(--accent); }
+.sidebar .nav-link i { margin-right: 6px; width: 16px; }
+.sidebar-heading { color: #6c757d; font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 1px; padding: 0.5rem 0.75rem; margin-top: 0.5rem; }
+.content-section { animation: fadeIn 0.2s ease; }
+@keyframes fadeIn { from {opacity:0; transform:translateY(4px);} to {opacity:1; transform:translateY(0);} }
+.card { border: none; box-shadow: 0 1px 4px rgba(0,0,0,.08); border-radius: 0.6rem; }
+.card-header { background: #fff; border-bottom: 1px solid #e9ecef; font-weight: 600; }
+.table th { font-weight: 600; font-size: 0.82rem; text-transform: uppercase;
+  letter-spacing: 0.5px; background: #f8f9fa; }
+.badge { font-weight: 500; }
+.dash-card { border-left: 4px solid var(--accent); }
+.navbar { background: #1a1d23 !important; }
+.navbar-brand { color: #fff !important; font-weight: 700; font-size: 1.1rem; }
+.stat-number { font-size: 2rem; font-weight: 700; color: var(--accent); }
+.form-label { font-weight: 500; font-size: 0.85rem; }

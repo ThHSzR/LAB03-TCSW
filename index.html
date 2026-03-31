@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma de Cursos Online — LAB03</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-dark sticky-top px-3 py-2">
+    <span class="navbar-brand"><i class="bi bi-mortarboard-fill me-2"></i>Plataforma de Cursos Online</span>
+    <span class="text-muted small d-none d-md-inline">LAB03 — HTML5 · Bootstrap 5 · JavaScript ES6</span>
+  </nav>
+
+  <div class="d-flex">
+    <!-- SIDEBAR -->
+    <nav class="sidebar flex-shrink-0 d-none d-md-block" style="width:200px">
+      <div class="sidebar-heading">Principal</div>
+      <a href="#" class="nav-link" data-section="section-dashboard"><i class="bi bi-speedometer2"></i>Dashboard</a>
+<a href="#" class="nav-link" data-section="section-usuarios"><i class="bi bi-people"></i>Usuários</a>
+<a href="#" class="nav-link" data-section="section-categorias"><i class="bi bi-folder2"></i>Categorias</a>
+<a href="#" class="nav-link" data-section="section-cursos"><i class="bi bi-book"></i>Cursos</a>
+<a href="#" class="nav-link" data-section="section-modulos"><i class="bi bi-collection"></i>Módulos</a>
+<a href="#" class="nav-link" data-section="section-aulas"><i class="bi bi-play-circle"></i>Aulas</a>
+<a href="#" class="nav-link" data-section="section-matriculas"><i class="bi bi-person-check"></i>Matrículas</a>
+<a href="#" class="nav-link" data-section="section-progresso"><i class="bi bi-graph-up"></i>Progresso</a>
+<a href="#" class="nav-link" data-section="section-avaliacoes"><i class="bi bi-star"></i>Avaliações</a>
+<a href="#" class="nav-link" data-section="section-trilhas"><i class="bi bi-map"></i>Trilhas</a>
+<a href="#" class="nav-link" data-section="section-planos"><i class="bi bi-credit-card"></i>Planos</a>
+<a href="#" class="nav-link" data-section="section-assinaturas"><i class="bi bi-wallet2"></i>Assinaturas</a>
+    </nav>
+
+    <!-- CONTENT -->
+    <main class="flex-grow-1 overflow-auto" style="min-height:calc(100vh - 56px)">
+      
+  <div id="section-dashboard" class="content-section p-4">
+    <h4 class="mb-4"><i class="bi bi-speedometer2 me-2 text-primary"></i>Dashboard</h4>
+    <div class="row g-3">
+      <div class="col-6 col-md-4 col-xl-2">
+        <div class="card dash-card p-3 text-center">
+          <div class="stat-number" id="dash-u">0</div>
+          <div class="text-muted small">Usuários</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-xl-2">
+        <div class="card dash-card p-3 text-center">
+          <div class="stat-number" id="dash-c">0</div>
+          <div class="text-muted small">Cursos</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-xl-2">
+        <div class="card dash-card p-3 text-center">
+          <div class="stat-number" id="dash-m">0</div>
+          <div class="text-muted small">Matrículas</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-xl-2">
+        <div class="card dash-card p-3 text-center">
+          <div class="stat-number" id="dash-cert">0</div>
+          <div class="text-muted small">Certificados</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-xl-2">
+        <div class="card dash-card p-3 text-center">
+          <div class="stat-number" id="dash-pl">0</div>
+          <div class="text-muted small">Planos</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-xl-2">
+        <div class="card dash-card p-3 text-center">
+          <div class="stat-number" id="dash-pg">0</div>
+          <div class="text-muted small">Pagamentos</div>
+        </div>
+      </div>
+    </div>
+    <div class="alert alert-info mt-4"><i class="bi bi-info-circle me-2"></i>
+      Use o menu lateral para navegar entre os módulos. Todos os dados são mantidos em memória durante a sessão.</div>
+  </div>
+      
+  <!-- Usuários -->
+  <div id="section-usuarios" class="content-section d-none p-4">
+    <h4 class="mb-4"><i class="bi bi-people me-2 text-primary"></i>Usuários</h4>
+    
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-header py-2">Cadastrar</div>
+          <div class="card-body">
+            <div id="alrt-usuarios"></div>
+            
+<form id="form-usuario" novalidate>
+  <div class="mb-2">
+    <label class="form-label">Nome Completo *</label>
+    <input id="u-nome" class="form-control form-control-sm" placeholder="Ex: João Silva" required>
+  </div>
+  <div class="mb-2">
+    <label class="form-label">E-mail *</label>
+    <input id="u-email" type="email" class="form-control form-control-sm" placeholder="joao@email.com" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Senha *</label>
+    <input id="u-senha" type="password" class="form-control form-control-sm" required>
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm w-100"><i class="bi bi-person-plus me-1"></i>Cadastrar</button>
+</form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-header py-2">Registros</div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              
+<div class="p-2">
+  <input id="u-busca" class="form-control form-control-sm mb-2" placeholder="🔍 Buscar por nome ou e-mail...">
+</div>
+<table class="table table-hover table-sm mb-0">
+  <thead><tr><th>#</th><th>Nome</th><th>E-mail</th><th>Cadastro</th><th></th></tr></thead>
+  <tbody id="tbody-usuarios"></tbody>
+</table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+  <!-- Categorias -->
+  <div id="section-categorias" class="content-section d-none p-4">
+    <h4 class="mb-4"><i class="bi bi-folder2 me-2 text-primary"></i>Categorias</h4>
+    
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-header py-2">Cadastrar</div>
+          <div class="card-body">
+            <div id="alrt-categorias"></div>
+            
+<form id="form-categoria" novalidate>
+  <div class="mb-2">
+    <label class="form-label">Nome *</label>
+    <input id="cat-nome" class="form-control form-control-sm" placeholder="Ex: Programação" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Descrição</label>
+    <textarea id="cat-desc" class="form-control form-control-sm" rows="2"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm w-100"><i class="bi bi-tag me-1"></i>Cadastrar</button>
+</form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-header py-2">Registros</div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover table-sm mb-0">
+  <thead><tr><th>#</th><th>Nome</th><th>Descrição</th><th></th></tr></thead>
+  <tbody id="tbody-categorias"></tbody>
+</table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+  <!-- Cursos -->
+  <div id="section-cursos" class="content-section d-none p-4">
+    <h4 class="mb-4"><i class="bi bi-book me-2 text-primary"></i>Cursos</h4>
+    
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-header py-2">Cadastrar</div>
+          <div class="card-body">
+            <div id="alrt-cursos"></div>
+            
+<form id="form-curso" novalidate>
+  <div class="mb-2">
+    <label class="form-label">Título *</label>
+    <input id="c-titulo" class="form-control form-control-sm" required>
+  </div>
+  <div class="mb-2">
+    <label class="form-label">Descrição</label>
+    <textarea id="c-desc" class="form-control form-control-sm" rows="2"></textarea>
+  </div>
+  <div class="mb-2">
+    <label class="form-label">Instrutor *</label>
+    <select id="c-instrutor" class="form-select form-select-sm"></select>
+  </div>
+  <div class="mb-2">
+    <label class="form-label">Categoria *</label>
+    <select id="c-categoria" class="form-select form-select-sm"></select>
+  </div>
+  <div class="mb-2">
+    <label class="form-label">Nível *</label>
+    <select id="c-nivel" class="form-select form-select-sm">
+      <option value="">Selecione...</option>
+      <option>Iniciante</option><option>Intermediário</option><option>Avançado</option>
+    </select>
+  </div>
+  <div class="row g-2 mb-2">
+    <div class="col"><label class="form-label">Data Publicação</label>
+      <input id="c-datapub" type="date" class="form-control form-control-sm"></div>
+    <div class="col"><label class="form-label">Total Aulas</label>
+      <input id="c-totalaulas" type="number" min="0" class="form-control form-control-sm" value="0"></div>
+    <div class="col"><label class="form-label">Total Horas</label>
+      <input id="c-totalhoras" type="number" min="0" step="0.5" class="form-control form-control-sm" value="0"></div>
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm w-100"><i class="bi bi-book me-1"></i>Cadastrar</button>
+</form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-header py-2">Registros</div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              
+<div class="p-2">
+  <select id="filtro-categoria" class="form-select form-select-sm">
+    <option value="">Todas as categorias</option>
+  </select>
+</div>
+<table class="table table-hover table-sm mb-0">
+  <thead><tr><th>#</th><th>Título</th><th>Instrutor</th><th>Categoria</th><th>Nível</th><th>Data Pub.</th><th>Aulas</th><th>Horas</th><th></th></tr></thead>
+  <tbody id="tbody-cursos"></tbody>
+</table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+  <!-- Módulos -->
+  <div id="section-modulos" class="content-section d-none p-4">
+    <h4 class="mb-4"><i class="bi bi-collection me-2 text-primary"></i>Módulos</h4>
+    
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-header py-2">Cadastrar</div>
+          <div class="card-body">
+            <div id="alrt-modulos"></div>
+            
+<form id="form-modulo" novalidate>
+  <div class="mb-2">
+    <label class="form-label">Curso *</label>
+    <select id="m-curso" class="form-select form-select-sm"></select>
+  </div>
+  <div class="mb-2">
+    <label class="form-label">Título do Módulo *</label>
+    <input id="m-titulo" class="form-control form-control-sm" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Ordem *</label>
+    <input id="m-ordem" type="number" min="1" class="form-control form-control-sm" required>
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm w-100"><i class="bi bi-collection me-1"></i>Adicionar Módulo</button>
+</form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-header py-2">Registros</div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover table-sm mb-0">
+  <thead><tr><th>#</th><th>Curso</th><th>Módulo</th><th>Ordem</th><th></th></tr></thead>
+  <tbody id="tbody-modulos"></tbody>
+</table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+  <!-- Aulas -->
+  <div id="section-aulas" class="content-section d-none p-4">
+    <h4 class="mb-4"><i class="bi bi-play-circle me-2 text-primary"></i>Aulas</h4>
+    
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-header py-2">Cadastrar</div>
+          <div class="card-body">
+            <div id="alrt-aulas"></div>
+            
+<form id="form-aula" novalidate>
+  <div class="mb-2">
+    <label class="form-label">Módulo *</label>
+    <select id="a-modulo" class="form-select form-select-sm"></select>
+  </div>
+  <div class="mb-2">
+    <label class="form-label">Título da Aula *</label>
+    <input id="a-titulo" class="form-control form-control-sm" required>
+  </div>
+  <div class="mb-2">
+    <label class="form-label">Tipo de Conteúdo *</label>
+    <select id="a-tipo" class="form-select form-select-sm">
+      <option value="">Selecione...</option>
+      <option>Vídeo</option><option>Texto</option><option>Quiz</option>
+    </select>
+  </div>
+  <div class="mb-2">
+    <label class="form-label">URL do Conteúdo</label>
+    <input id="a-url" class="form-control form-control-sm" placeholder="https://...">
+  </div>
+  <div class="row g-2 mb-3">
+    <div class="col"><label class="form-label">Duração (min)</label>
+      <input id="a-duracao" type="number" min="0" class="form-control form-control-sm" value="0"></div>
+    <div class="col"><label class="form-label">Ordem *</label>
+      <input id="a-ordem" type="number" min="1" class="form-control form-control-sm"></div>
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm w-100"><i class="bi bi-play-circle me-1"></i>Adicionar Aula</button>
+</form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-header py-2">Registros</div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover table-sm mb-0">
+  <thead><tr><th>#</th><th>Curso</th><th>Módulo</th><th>Aula</th><th>Tipo</th><th>Duração</th><th>Ordem</th><th></th></tr></thead>
+  <tbody id="tbody-aulas"></tbody>
+</table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+  <!-- Matrículas -->
+  <div id="section-matriculas" class="content-section d-none p-4">
+    <h4 class="mb-4"><i class="bi bi-person-check me-2 text-primary"></i>Matrículas</h4>
+    
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-header py-2">Cadastrar</div>
+          <div class="card-body">
+            <div id="alrt-matriculas"></div>
+            
+<form id="form-matricula" novalidate>
+  <div class="mb-2">
+    <label class="form-label">Usuário *</label>
+    <select id="mat-usuario" class="form-select form-select-sm"></select>
+  </div>
+  <div class="mb-2">
+    <label class="form-label">Curso *</label>
+    <select id="mat-curso" class="form-select form-select-sm"></select>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Data da Matrícula</label>
+    <input id="mat-data" type="date" class="form-control form-control-sm">
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm w-100"><i class="bi bi-person-check me-1"></i>Matricular</button>
+</form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-header py-2">Registros</div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover table-sm mb-0">
+  <thead><tr><th>#</th><th>Usuário</th><th>Curso</th><th>Data Matrícula</th><th>Conclusão</th><th></th></tr></thead>
+  <tbody id="tbody-matriculas"></tbody>
+</table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+  <div id="section-progresso" class="content-section d-none p-4">
+    <h4 class="mb-4"><i class="bi bi-graph-up me-2 text-primary"></i>Progresso &amp; Certificados</h4>
+    <div class="row g-4">
+      <!-- Progresso -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header py-2">Marcar Conclusão de Aula</div>
+          <div class="card-body">
+            <div id="alrt-progresso"></div>
+            <form id="form-progresso" novalidate>
+              <div class="mb-2"><label class="form-label">Usuário *</label>
+                <select id="prog-usuario" class="form-select form-select-sm"></select></div>
+              <div class="mb-2"><label class="form-label">Aula *</label>
+                <select id="prog-aula" class="form-select form-select-sm"></select></div>
+              <div class="mb-3"><label class="form-label">Status</label>
+                <select id="prog-status" class="form-select form-select-sm">
+                  <option>Concluído</option><option>Em andamento</option></select></div>
+              <button type="submit" class="btn btn-success btn-sm w-100"><i class="bi bi-check2-circle me-1"></i>Registrar Progresso</button>
+            </form>
+          </div>
+        </div>
+        <div class="card mt-3">
+          <div class="card-header py-2">Registros de Progresso</div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-sm mb-0">
+                <thead><tr><th>Usuário</th><th>Aula</th><th>Status</th><th>Data</th></tr></thead>
+                <tbody id="tbody-progresso"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Certificados -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header py-2">🎓 Emitir Certificado</div>
+          <div class="card-body">
+            <div id="alrt-certificados"></div>
+            <form id="form-certificado" novalidate>
+              <div class="mb-2"><label class="form-label">Usuário *</label>
+                <select id="cert-usuario" class="form-select form-select-sm"></select></div>
+              <div class="mb-3"><label class="form-label">Curso *</label>
+                <select id="cert-curso" class="form-select form-select-sm"></select></div>
+              <button type="submit" class="btn btn-warning btn-sm w-100"><i class="bi bi-award me-1"></i>Emitir Certificado</button>
+            </form>
+          </div>
+        </div>
+        <div class="card mt-3">
+          <div class="card-header py-2">Certificados Emitidos</div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-sm mb-0">
+                <thead><tr><th>#</th><th>Usuário</th><th>Curso</th><th>Código</th><th>Data</th></tr></thead>
+                <tbody id="tbody-certificados"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+  <!-- Avaliações -->
+  <div id="section-avaliacoes" class="content-section d-none p-4">
+    <h4 class="mb-4"><i class="bi bi-star me-2 text-primary"></i>Avaliações</h4>
+    
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-header py-2">Cadastrar</div>
+          <div class="card-body">
+            <div id="alrt-avaliacoes"></div>
+            
+<form id="form-avaliacao" novalidate>
+  <div class="mb-2"><label class="form-label">Usuário *</label>
+    <select id="av-usuario" class="form-select form-select-sm"></select></div>
+  <div class="mb-2"><label class="form-label">Curso *</label>
+    <select id="av-curso" class="form-select form-select-sm"></select></div>
+  <div class="mb-2"><label class="form-label">Nota (1–5) *</label>
+    <select id="av-nota" class="form-select form-select-sm">
+      <option value="">Selecione...</option>
+      <option value="1">1 ⭐</option><option value="2">2 ⭐⭐</option>
+      <option value="3">3 ⭐⭐⭐</option><option value="4">4 ⭐⭐⭐⭐</option>
+      <option value="5">5 ⭐⭐⭐⭐⭐</option>
+    </select></div>
+  <div class="mb-3"><label class="form-label">Comentário</label>
+    <textarea id="av-comentario" class="form-control form-control-sm" rows="2"></textarea></div>
+  <button type="submit" class="btn btn-primary btn-sm w-100"><i class="bi bi-star me-1"></i>Avaliar</button>
+</form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-header py-2">Registros</div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover table-sm mb-0">
+  <thead><tr><th>#</th><th>Usuário</th><th>Curso</th><th>Nota</th><th>Comentário</th><th>Data</th></tr></thead>
+  <tbody id="tbody-avaliacoes"></tbody>
+</table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+  <div id="section-trilhas" class="content-section d-none p-4">
+    <h4 class="mb-4"><i class="bi bi-map me-2 text-primary"></i>Trilhas de Conhecimento</h4>
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="card mb-3">
+          <div class="card-header py-2">Nova Trilha</div>
+          <div class="card-body">
+            <div id="alrt-trilhas"></div>
+            <form id="form-trilha" novalidate>
+              <div class="mb-2"><label class="form-label">Título *</label>
+                <input id="tr-titulo" class="form-control form-control-sm" required></div>
+              <div class="mb-2"><label class="form-label">Descrição</label>
+                <textarea id="tr-desc" class="form-control form-control-sm" rows="2"></textarea></div>
+              <div class="mb-3"><label class="form-label">Categoria</label>
+                <select id="tr-categoria" class="form-select form-select-sm"></select></div>
+              <button type="submit" class="btn btn-primary btn-sm w-100"><i class="bi bi-map me-1"></i>Criar Trilha</button>
+            </form>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header py-2">Associar Curso à Trilha</div>
+          <div class="card-body">
+            <div id="alrt-trilhas-cursos"></div>
+            <form id="form-trilha-curso" novalidate>
+              <div class="mb-2"><label class="form-label">Trilha *</label>
+                <select id="tc-trilha" class="form-select form-select-sm"></select></div>
+              <div class="mb-2"><label class="form-label">Curso *</label>
+                <select id="tc-curso" class="form-select form-select-sm"></select></div>
+              <div class="mb-3"><label class="form-label">Ordem *</label>
+                <input id="tc-ordem" type="number" min="1" class="form-control form-control-sm"></div>
+              <button type="submit" class="btn btn-success btn-sm w-100"><i class="bi bi-link me-1"></i>Associar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card mb-3">
+          <div class="card-header py-2">Trilhas Cadastradas</div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-sm mb-0">
+                <thead><tr><th>#</th><th>Título</th><th>Descrição</th><th>Categoria</th><th></th></tr></thead>
+                <tbody id="tbody-trilhas"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header py-2">Cursos por Trilha</div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-sm mb-0">
+                <thead><tr><th>Trilha</th><th>Curso</th><th>Ordem</th></tr></thead>
+                <tbody id="tbody-trilhas-cursos"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+  <!-- Planos -->
+  <div id="section-planos" class="content-section d-none p-4">
+    <h4 class="mb-4"><i class="bi bi-credit-card me-2 text-primary"></i>Planos</h4>
+    
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-header py-2">Cadastrar</div>
+          <div class="card-body">
+            <div id="alrt-planos"></div>
+            
+<form id="form-plano" novalidate>
+  <div class="mb-2"><label class="form-label">Nome *</label>
+    <input id="pl-nome" class="form-control form-control-sm" placeholder="Ex: Plano Premium" required></div>
+  <div class="mb-2"><label class="form-label">Descrição</label>
+    <textarea id="pl-desc" class="form-control form-control-sm" rows="2"></textarea></div>
+  <div class="row g-2 mb-3">
+    <div class="col"><label class="form-label">Preço (R$) *</label>
+      <input id="pl-preco" type="number" min="0" step="0.01" class="form-control form-control-sm" required></div>
+    <div class="col"><label class="form-label">Duração (meses) *</label>
+      <input id="pl-duracao" type="number" min="1" class="form-control form-control-sm" required></div>
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm w-100"><i class="bi bi-credit-card me-1"></i>Criar Plano</button>
+</form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-header py-2">Registros</div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover table-sm mb-0">
+  <thead><tr><th>#</th><th>Nome</th><th>Descrição</th><th>Preço</th><th>Duração</th><th></th></tr></thead>
+  <tbody id="tbody-planos"></tbody>
+</table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+  <div id="section-assinaturas" class="content-section d-none p-4">
+    <h4 class="mb-4"><i class="bi bi-wallet2 me-2 text-primary"></i>Assinaturas &amp; Pagamentos</h4>
+    <div class="row g-4">
+      <!-- CHECKOUT -->
+      <div class="col-lg-4">
+        <div class="card mb-3">
+          <div class="card-header py-2 bg-primary text-white">🛒 Checkout — Nova Assinatura</div>
+          <div class="card-body">
+            <div id="alrt-assinaturas"></div>
+            <form id="form-assinatura" novalidate>
+              <div class="mb-2"><label class="form-label">Usuário *</label>
+                <select id="ass-usuario" class="form-select form-select-sm"></select></div>
+              <div class="mb-2"><label class="form-label">Plano *</label>
+                <select id="ass-plano" class="form-select form-select-sm"></select></div>
+              <div class="mb-3"><label class="form-label">Data de Início</label>
+                <input id="ass-inicio" type="date" class="form-control form-control-sm"></div>
+              <button type="submit" class="btn btn-primary btn-sm w-100"><i class="bi bi-bag-check me-1"></i>Confirmar Assinatura</button>
+            </form>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header py-2 bg-success text-white">💳 Registrar Pagamento</div>
+          <div class="card-body">
+            <div id="alrt-pagamentos"></div>
+            <form id="form-pagamento" novalidate>
+              <div class="mb-2"><label class="form-label">Assinatura *</label>
+                <select id="pag-assinatura" class="form-select form-select-sm"></select></div>
+              <div class="mb-2"><label class="form-label">Valor Pago (R$) *</label>
+                <input id="pag-valor" type="number" step="0.01" min="0" class="form-control form-control-sm"></div>
+              <div class="mb-2"><label class="form-label">Data do Pagamento</label>
+                <input id="pag-data" type="date" class="form-control form-control-sm"></div>
+              <div class="mb-3"><label class="form-label">Método de Pagamento *</label>
+                <select id="pag-metodo" class="form-select form-select-sm">
+                  <option value="">Selecione...</option>
+                  <option>Cartão de Crédito</option><option>Cartão de Débito</option>
+                  <option>PIX</option><option>Boleto</option>
+                </select></div>
+              <button type="submit" class="btn btn-success btn-sm w-100"><i class="bi bi-check-circle me-1"></i>Confirmar Pagamento</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card mb-3">
+          <div class="card-header py-2">Assinaturas Ativas</div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-sm mb-0">
+                <thead><tr><th>#</th><th>Usuário</th><th>Plano</th><th>Início</th><th>Fim</th></tr></thead>
+                <tbody id="tbody-assinaturas"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header py-2">Histórico de Pagamentos</div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-sm mb-0">
+                <thead><tr><th>#</th><th>Assinatura</th><th>Valor</th><th>Data</th><th>Método</th><th>ID Transação</th></tr></thead>
+                <tbody id="tbody-pagamentos"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
