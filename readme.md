@@ -77,9 +77,8 @@ O sistema simula 13 entidades em memória:
 ## 👨‍💻 Autor
 
 Desenvolvido por: 
-**
 - [Thiago Henrique](github.com/ThHSzR)
 - [Mateus Afonso](github.com/IsMateusReal)
 - [Guilherme Aguiar](github.com/GuilhermeAgu1ar)
-**  
+
 Curso: Engenharia de Computação · PUC-GO
