@@ -1,7 +1,6 @@
 # 📚 Plataforma de Cursos Online — LAB03
 
-Aplicação web front-end desenvolvida como atividade laboratorial, simulando o gerenciamento
-acadêmico e financeiro de uma plataforma de cursos online.
+Aplicação web front-end desenvolvida como atividade laboratorial, simulando o gerenciamento acadêmico e financeiro de uma plataforma de cursos online.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -14,12 +13,14 @@ acadêmico e financeiro de uma plataforma de cursos online.
 - **JavaScript ES6+** — Classes, Funções, Eventos DOM e persistência em memória
 
 ## 📁 Estrutura do Projeto
-lab03/
-├── index.html # Estrutura principal com Navbar e Sidebar
-├── app.js # Classes JS, lógica de negócio e eventos
-└── style.css # Estilos customizados
 
-text
+```
+lab03/
+├── index.html   # Estrutura principal com Navbar e Sidebar
+├── app.js       # Classes JS, lógica de negócio e eventos
+├── style.css    # Estilos customizados
+└── README.md
+```
 
 ## ⚙️ Como Executar
 
@@ -36,6 +37,7 @@ Não requer instalação de dependências ou servidor.
 ## 📋 Funcionalidades
 
 ### Módulo Acadêmico
+
 | Seção | Descrição |
 |---|---|
 | Usuários | Cadastro com validação de e-mail único e hash de senha |
@@ -45,6 +47,7 @@ Não requer instalação de dependências ou servidor.
 | Aulas | Tipos: Vídeo, Texto ou Quiz, com URL e duração |
 
 ### Módulo de Progresso
+
 | Seção | Descrição |
 |---|---|
 | Matrículas | Registro com bloqueio de duplicata |
@@ -54,10 +57,11 @@ Não requer instalação de dependências ou servidor.
 | Trilhas | Agrupamento de cursos com ordem definida |
 
 ### Módulo Financeiro
+
 | Seção | Descrição |
 |---|---|
 | Planos | Cadastro com preço e duração em meses |
-| Assinaturas | Checkout com cálculo automático de `DataFim` |
+| Assinaturas | Checkout com cálculo automático de DataFim |
 | Pagamentos | Registro com método de pagamento e ID de transação gerado |
 
 ## 🗄️ Modelo de Dados
@@ -69,3 +73,8 @@ O sistema simula 13 entidades em memória:
 `Planos` · `Assinaturas` · `Pagamentos`
 
 > ⚠️ Os dados são mantidos apenas durante a sessão do navegador (sem banco de dados ou localStorage).
+
+## 👨‍💻 Autor
+
+Desenvolvido por **[Seu Nome]** — LAB03  
+Curso: [Nome do Curso] · [Nome da Instituição]
